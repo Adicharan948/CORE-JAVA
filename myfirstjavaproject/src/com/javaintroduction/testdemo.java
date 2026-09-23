@@ -1,3 +1,11 @@
+/*
+
+Java
+
+Write a Java program that defines 5 methods (3 static and 2 instance methods) and demonstrate what happens when these methods are not invoked from the main() method.but invoked  all 5 methods
+*/
+
+
 package com.javaintroduction;
 
 public class testdemo {
