@@ -32,7 +32,7 @@ class Student {
 
    //Static method
     static void displayCollegeDetails() {
-        
+        System.out.println("College: ABC Engineering College");
     }
 
     public static void main(String[] args) {
