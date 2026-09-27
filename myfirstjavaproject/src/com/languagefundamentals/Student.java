@@ -1,3 +1,14 @@
+/*
+Create a Student class using:
+
+* Static Block – Print college name.
+* Instance Block – Print "Student object created".
+* Instance Method – Display student details.
+* Static Method – Display college details.
+* Create 2 Student objects in main() and call all methods.
+* Student fields: rollNo, name, marks.
+*/
+
 package com.languagefundamentals;
 
 class Student {
@@ -16,7 +27,7 @@ class Student {
         System.out.println("Student object created");
     }
 
-   
+   //constructor
     Student(int rollNo, String name, int marks) {
         this.rollNo = rollNo;
         this.name = name;
