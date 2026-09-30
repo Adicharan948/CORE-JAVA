@@ -17,14 +17,6 @@ package com.languagefundamentals;
 
 public class Datatypes {
 	
-	byte age=21;
-	short students=2800;
-	int sal=28000;
-	long population=123456789;
-	float p=89.6f;
-	double bb=23566.08d;
-	char g='S';
-	boolean b=true;
 	
 
 	public static void main(String[] args) {
@@ -37,6 +29,15 @@ public class Datatypes {
 		double bb=23566.08d;
 		char g='S';
 		boolean b=true;
+		boolean b1=false;
+		
+//		boolean b2=0;
+//		boolean b3=1;
+//		boolean b4=TRUE;
+//		boolean b5=FALSE;
+//		boolean b6='true';
+//		boolean b7='false';
+		
 		
 		
 		System.out.println("my age is:"+age);
@@ -47,6 +48,14 @@ public class Datatypes {
 		System.out.println("bank balance is:"+bb);
 		System.out.println("grade is:"+g);
 		System.out.println("java learner or not:"+b);
+		System.out.println("java learner or not:"+b1);
+//		System.out.println("java learner or not:"+b2);
+//		System.out.println("java learner or not:"+b3);
+//		System.out.println("java learner or not:"+b4);
+//		System.out.println("java learner or not:"+b5);
+//		System.out.println("java learner or not:"+b6);
+//		System.out.println("java learner or not:"+b7);
+//		
 		
 		
 		
