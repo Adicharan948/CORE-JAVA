@@ -38,10 +38,21 @@ public class Testmethods {
 		b.sub2marks=90;
 		b.sub3marks=99;
 		
-		
 		b.displaystudents();
 		b.total();
 		b.avg();
+		
+		Testmethods b1=new Testmethods();
+		b1.name="ssi";
+		b1.rollno=13;
+		b1.course="JAVA";
+		b1.sub1marks=83;
+		b1.sub2marks=90;
+		b1.sub3marks=99;
+		
+		b1.displaystudents();
+		b1.total();
+		b1.avg();
 
 	}
 
