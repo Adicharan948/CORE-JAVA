@@ -1,6 +1,6 @@
 package com.languagefundamentals.Methods;
 
-public class Testdemo2 {
+public class MethodsOperations {
 
 	public static void add(int a, int b) {
 		System.out.println("addition is:" + (a + b));

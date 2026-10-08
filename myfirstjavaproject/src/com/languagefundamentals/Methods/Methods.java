@@ -2,7 +2,7 @@ package com.languagefundamentals.Methods;
 
 
 //no return type+no parameters
-public class Testdemo1 {
+public class Methods {
 	
 	public static void welcome() {
 		System.out.println("welcome to java");
@@ -14,7 +14,7 @@ public class Testdemo1 {
 
 	public static void main(String[] args) {
 		
-		Testdemo1 t=new Testdemo1();
+		Methods t=new Methods();
 		
 		System.out.println("main method started");
 		
