@@ -9,21 +9,10 @@ public class StudentInfo {
 		System.out.println("main method started");
 
 		Scanner sc = new Scanner(System.in);
-		System.out.println("enter student name:");
-		String name = sc.nextLine();
-		studentname(name);
-
-		System.out.println("enter student age:");
-		int age = sc.nextInt();
-		studentage(age);
-
-		System.out.println("enter student marks:");
-		int marks = sc.nextInt();
-		studentmarks(marks);
-
-		System.out.println("enter student phno:");
-		long no = sc.nextLong();
-		studentphno(no);
+		
+		System.out.println("enter address:");
+		String add=sc.nextLine();
+		studentaddres(add);
 
 		System.out.println("main method ended");
 		sc.close();
@@ -45,5 +34,10 @@ public class StudentInfo {
 	void studentphno(long phno) {
 		System.out.println("studene phno is:" + phno);
 	}
+	
+	void studentaddres(String address) {
+		System.out.println("studene address is:" + address);
+	}
+
 
 }

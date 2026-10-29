@@ -17,81 +17,78 @@ import com.vcube.employee.repository.EmployeeRepository;
 
 @RestController
 @RequestMapping("/employees")
-@CrossOrigin(origins = "http://localhost:5173")
+
+@CrossOrigin(origins ="http://localhost:3000")
 public class EmployeeController {
 
-    private EmployeeRepository repository;
+	private EmployeeRepository repository;
 
-    // Constructor
-    public EmployeeController(EmployeeRepository repository) {
-        this.repository = repository;
-    }
+	// Constructor
+	public EmployeeController(EmployeeRepository repository) {
+		this.repository = repository;
+	}
 
-    // ADD EMPLOYEE
-    @PostMapping
-    public Employee addEmployee(@RequestBody Employee employee) {
+	// ADD EMPLOYEE
+	@PostMapping("/add")
+	public Employee addEmployee(@RequestBody Employee employee) {
+		System.out.println(employee.getName());
+		Employee savedEmployee = repository.save(employee);
 
-        Employee savedEmployee = repository.save(employee);
+		System.out.println("Employee Added:");
+		System.out.println(savedEmployee);
 
-        System.out.println("Employee Added:");
-        System.out.println(savedEmployee);
+		return savedEmployee;
+	}
 
-        return savedEmployee;
-    }
+	// GET ALL EMPLOYEES
+	@GetMapping
+	public List<Employee> getAllEmployees() {
 
-    // GET ALL EMPLOYEES
-    @GetMapping
-    public List<Employee> getAllEmployees() {
+		List<Employee> employees = repository.findAll();
 
-        List<Employee> employees = repository.findAll();
+		System.out.println("All Employees:");
 
-        System.out.println("All Employees:");
+		for (Employee employee : employees) {
+			System.out.println(employee);
+		}
 
-        for (Employee employee : employees) {
-            System.out.println(employee);
-        }
+		return employees;
+	}
 
-        return employees;
-    }
+	// UPDATE EMPLOYEE
+	@PutMapping("/{id}")
+	public Employee updateEmployee(@PathVariable Integer id, @RequestBody Employee employee) {
 
-    // UPDATE EMPLOYEE
-    @PutMapping("/{id}")
-    public Employee updateEmployee(
-            @PathVariable Integer id,
-            @RequestBody Employee employee) {
+		Employee existingEmployee = repository.findById(id).orElse(null);
 
-        Employee existingEmployee =
-                repository.findById(id).orElse(null);
+		if (existingEmployee == null) {
+			return null;
+		}
 
-        if (existingEmployee == null) {
-            return null;
-        }
+		existingEmployee.setName(employee.getName());
+		existingEmployee.setDepartment(employee.getDepartment());
+		existingEmployee.setSalary(employee.getSalary());
 
-        existingEmployee.setName(employee.getName());
-        existingEmployee.setDepartment(employee.getDepartment());
-        existingEmployee.setSalary(employee.getSalary());
+		Employee updatedEmployee = repository.save(existingEmployee);
 
-        Employee updatedEmployee =
-                repository.save(existingEmployee);
+		System.out.println("Employee Updated:");
+		System.out.println(updatedEmployee);
 
-        System.out.println("Employee Updated:");
-        System.out.println(updatedEmployee);
+		return updatedEmployee;
+	}
 
-        return updatedEmployee;
-    }
+	// DELETE EMPLOYEE
+	@DeleteMapping("/{id}")
+	public String deleteEmployee(@PathVariable Integer id) {
 
-    // DELETE EMPLOYEE
-    @DeleteMapping("/{id}")
-    public String deleteEmployee(@PathVariable Integer id) {
+		if (!repository.existsById(id)) {
+			return "Employee not found";
+		}
 
-        if (!repository.existsById(id)) {
-            return "Employee not found";
-        }
+		repository.deleteById(id);
 
-        repository.deleteById(id);
+		System.out.println("Employee Deleted: " + id);
 
-        System.out.println("Employee Deleted: " + id);
-
-        return "Employee deleted successfully";
-    }
+		return "Employee deleted successfully";
+	}
 }
