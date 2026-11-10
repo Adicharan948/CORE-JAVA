@@ -20,6 +20,8 @@ public class Print10ages {
 		ages[6]=21;
 		ages[7]=21;
 		ages[8]=21;
+		ages[9]=21;
+		
 		
 		//representation
 		
