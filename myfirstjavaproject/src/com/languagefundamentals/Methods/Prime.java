@@ -5,7 +5,7 @@ public class Prime {
 
 	public static void main(String[] args) {
 		
-		int n=4;
+		int n=7;
 		int count=0;
 		
 		for(int i=1;i<=n;i++) {

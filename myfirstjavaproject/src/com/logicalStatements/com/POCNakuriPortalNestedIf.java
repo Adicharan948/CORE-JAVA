@@ -3,7 +3,7 @@ package com.logicalStatements.com;
 
 import java.util.Scanner;
 
-public class NakuriPortalNestedIf {
+public class POCNakuriPortalNestedIf {
 
     public static void main(String[] args) {
 
